@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Quiz Helper",
+  "version": "1.0.0",
+  "description": "Capture l'onglet avec un raccourci et demande la réponse à Gemini.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Quiz Helper",
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "capture-and-ask": {
+      "suggested_key": {
+        "default": "Alt+Shift+Q"
+      },
+      "description": "Capturer l'écran et demander la réponse"
+    }
+  }
+}

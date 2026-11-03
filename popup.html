@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; margin: 0; padding: 12px; font: 13px/1.4 system-ui, sans-serif; }
+    label { display: block; margin-top: 8px; font-weight: 600; }
+    input, select { width: 100%; box-sizing: border-box; margin-top: 4px; padding: 6px; }
+    button { margin-top: 10px; padding: 6px 12px; }
+    #status { margin-left: 8px; color: #2a7; }
+    #answer { margin-top: 12px; padding: 8px; background: #f3f3f3; border-radius: 6px; white-space: pre-wrap; min-height: 2em; }
+    .hint { color: #777; font-size: 12px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <label for="apiKey">Clé API Gemini</label>
+  <input id="apiKey" type="password" placeholder="AIza...">
+
+  <label for="model">Modèle</label>
+  <input id="model" list="models" placeholder="gemini-flash-latest">
+  <datalist id="models">
+    <option value="gemini-flash-latest">Flash (rapide, recommandé)</option>
+    <option value="gemini-pro-latest">Pro (plus précis, plus lent)</option>
+    <option value="gemini-flash-lite-latest">Flash-Lite (le plus rapide)</option>
+  </datalist>
+
+  <button id="save">Enregistrer</button><span id="status"></span>
+
+  <label>Dernière réponse</label>
+  <div id="answer">—</div>
+
+  <div class="hint">Raccourci : Alt+Shift+Q (modifiable dans chrome://extensions/shortcuts)</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
